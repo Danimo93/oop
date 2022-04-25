@@ -1,0 +1,20 @@
+public class Chapter {
+        private String title;
+        private int numberOfPages;
+        private int minutesPerPages;
+
+        public Chapter(String title, int numberOfPages, int minutesPerPages){
+            this.title = title;
+            this.numberOfPages = numberOfPages;
+            this.minutesPerPages = minutesPerPages;
+        }
+        public String getTitle(){return title;}
+        public void setTitle(String title){this.title = title;}
+        public int getNumberOfPages() {return numberOfPages;}
+        public void setNumberOfPages(int numberOfPages){this.numberOfPages = numberOfPages;}
+        public int getMinutesPerPages(){return minutesPerPages;}
+        public void setMinutesPerPages(int minutesPerPages){this.minutesPerPages = minutesPerPages;}
+        public void printChapterInformation(){
+            System.out.println("Title:" + title + ", Pages:" +  numberOfPages + ", minutes:" + minutesPerPages);
+        }
+}
