@@ -54,7 +54,7 @@ class TransactionRollback{
         try (Connection con = DriverManager
                 .getConnection("jdbc:mysql://localhost:3306/equipmentBallsDb?useSSL=false",
                         "root",
-                        "adminroot")) {
+                        "DAN1945mor")) {
             // Let's handle commits on our own
             con.setAutoCommit(false);
             Statement stmt = con.createStatement();

@@ -54,7 +54,7 @@ public class ExampleUsingPreparedStatements {
     public ArrayList<Ball> getBalls(){
         ArrayList<Ball> result = new ArrayList<>();
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/equipmentBallsDb?useSSL=false", "root", "adminroot");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/equipmentBallsDb?useSSL=false", "root", "DAN1945mor");
             Statement stms = con.createStatement();
             ResultSet rs = stms.executeQuery("SELECT * FROM equipmentBall");
             while (rs.next()){
@@ -80,7 +80,7 @@ public class ExampleUsingPreparedStatements {
         ArrayList<Locker>  result = new ArrayList<>();
         String preparedSelect = "SELECT * FROM lockers WHERE address = ?";
         try{
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/equipmentBallsDb?useSSL=false", "root", "adminroot");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/equipmentBallsDb?useSSL=false", "root", "DAN1945mor");
             con.setAutoCommit(false);
 
             PreparedStatement statement = con.prepareStatement(preparedSelect);
@@ -107,7 +107,7 @@ public class ExampleUsingPreparedStatements {
     public void deflateInLockers(ArrayList<Integer> lockers){
         String preparedUpdate = "UPDATE equipmentBall SET needsAir = ? WHERE location = ?";
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/equipmentBallsDb?useSSL=false", "root", "adminroot");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/equipmentBallsDb?useSSL=false", "root", "DAN1945mor");
             con.setAutoCommit(false);
 
             for(Integer lockerId : lockers){
