@@ -2,8 +2,10 @@ package view;
 
 import controller.UserRegister;
 
-import javax.swing.text.html.parser.Entity;
-import java.util.*;
+import java.util.HashMap;
+import java.util.InputMismatchException;
+import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
     HashMap<Integer, MenuItem> menuItems = new HashMap<>();
