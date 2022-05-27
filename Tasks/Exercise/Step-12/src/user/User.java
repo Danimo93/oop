@@ -6,6 +6,10 @@ public class User extends Person{
 
     School school;
 
+    public User(){
+
+    }
+    
     public long getUserId() {
         return userId;
     }

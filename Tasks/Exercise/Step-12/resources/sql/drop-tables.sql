@@ -9,4 +9,4 @@ DROP TABLE if exists users;
 /**
  * I had a double name in my table.
  */
-DELETE FROM users WHERE name='Johan Baumann';
+"DELETE FROM users WHERE name='Johan Baumann';"
