@@ -19,7 +19,8 @@ public class JDBCOps {
         ArrayList<User> result = new ArrayList<>();
         String readSql = "SELECT * FROM users";
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/uniUsers?useSSL=false", "root", "DAN1945mor");
+            Connection con = DriverManager
+                    .getConnection("jdbc:mysql://localhost:3306/uniUsers?useSSL=false", "root", "DAN1945mor");
 
             Statement stmt = con.prepareStatement(readSql);
             ResultSet resultSet = stmt.executeQuery(readSql);

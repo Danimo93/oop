@@ -30,5 +30,4 @@ public class Person {
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-
 }

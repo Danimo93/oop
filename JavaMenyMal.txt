@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class PrintMenu {
+
+	// HER KAN DU SETTE INN FORSKJELLIGE VARIABLER (MED OG UTEN VERDIER)
+
+    public int selectionScreen() {
+        int select;
+        Scanner userInput = new Scanner(System.in);
+ 
+	Sout();
+ 
+        select = userInput.nextInt();
+        return select;
+    }
+
+    public static void printMenu(String[] options) {
+        for (String option : options) {
+            System.out.println(option);
+        }
+        System.out.println("");
+
+    }
+
+    public void terminal() {
+        String[] options = {
+                "1. -----",
+                "2. -----",
+                "3. -----",
+                "4. -----",
+                "5. -----"
+        };
+        Scanner userInput = new Scanner(System.in);
+        int option = 1;
+        while (option != 5) {
+            printMenu(options);
+            try {
+                option = userInput.nextInt();
+                switch (option) {
+                    case 1 -> {
+			//WHATEVER YOU WANT TO INPUT
+                    }
+
+                    case 2 -> {
+			//WHATEVER YOU WANT TO INPUT
+                    }
+
+                    case 3 -> {
+			//WHATEVER YOU WANT TO INPUT
+                    }
+
+                    case 4 -> {
+			//WHATEVER YOU WANT TO INPUT
+                    }
+
+                    case 5 -> {
+                        //WHATEVER YOU WANT TO INPUT
+
+                    }
+                }
+
+            } catch (Exception e) {
+                
+            }
+        }
+    }
+}
+    

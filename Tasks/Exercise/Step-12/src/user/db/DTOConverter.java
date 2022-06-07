@@ -9,8 +9,8 @@ public class DTOConverter {
         newUser.setUserId(dto.id);
         newUser.setPersonnummer(Long.parseLong(dto.personnummer));
         newUser.setName(dto.name);
-        newUser.setDateOfBirth(dto.dob);
-        newUser.setPrimaryCampus(dto.campus);
+        //newUser.setDateOfBirth(dto.dob);
+        //newUser.setPrimaryCampus(dto.campus);
 
         return newUser;
     }
