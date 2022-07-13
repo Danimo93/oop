@@ -209,7 +209,8 @@ public class Program {
         for (MultichoiceQuiz ignored: historyArray) {
             System.out.println("Here is the question");
             System.out.println(historyArray.get(i).getQuestion());
-            System.out.println(historyArray.get(i).getAnswerA()  + ". " + " " + historyArray.get(i).getAnswerB()  + ". " + " "
+            System.out.println(historyArray.get(i).getAnswerA()  + ". " + " " + historyArray.get(i).getAnswerB()
+                    + ". " + " "
                     + historyArray.get(i).getAnswerC()  + ". " + " " + historyArray.get(i).getAnswerD() + ". ");
             if (scan.nextLine().toLowerCase().equals(historyArray.get(i).getCorrectAnswer())){
                 System.out.println("That is correct");
