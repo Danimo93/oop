@@ -8,6 +8,6 @@ public class Parkinglot {
         System.out.println("3. List Cars");
         System.out.println("4. List Parkinglot");
         System.out.println("5. Exit");
-        class
+
     }
 }
