@@ -107,41 +107,6 @@ public class Program {
 
     }
 
-    //this does not work like it should, very strange. It seems like the new user can't be found in the arraylist, but if the name is the same
-    // as another user in the database you get an error... I'll try and come back to this later. TODO
-    /*
-    public void login() throws SQLException {
-        Database d = new Database();
-        ArrayList<User> users = d.listAllUser();
-        System.out.println("Please log in with your username, if you are a new player a new user will be made for you");
-
-        Scanner scan = new Scanner(System.in);
-
-        String username = scan.nextLine();
-
-        User u = new User(username);
-
-        for (User x: users) {
-            if (x.getName().equals(u.getName())){
-                //Conntinu with the game
-                System.out.println("you already have a user");
-            }
-            else{
-                //make a new user
-                newUser(username);
-            }
-        }
-
-
-        if (users.contains(u)){
-            //Gå videre med spillet
-            System.out.println("you already have a user");
-        }
-        else if (!users.contains(u)){
-           newUser(username);
-        }
-
-         */
 
     public void scoreForOne() throws SQLException {
         System.out.println("What is the username for the player");
@@ -230,56 +195,6 @@ public class Program {
 
 
 
-    //Please just ignore the mess bellow
-    /*
-    * System.out.println("Here is the question");
-        System.out.println(qArray.get(0).getQuestion());
-
-        if (scan.nextLine().equals(qArray.get(0).getCorrectAnswer())){
-            points += 1;
-            System.out.println("That is correct");
-            System.out.println("Current points " + points);
-        }else {
-            System.out.println("That is wrong");
-            System.out.println("Current points " + points);
-        }
-
-        System.out.println("Here is the question");
-        System.out.println(qArray.get(1).getQuestion());
-
-        if (scan.nextLine().equals(qArray.get(1).getCorrectAnswer())){
-            points += 1;
-            System.out.println("That is correct");
-            System.out.println("Current points " + points);
-        }else {
-            System.out.println("That is wrong");
-            System.out.println("Current points " + points);
-        }
-
-        System.out.println("Here is the question");
-        System.out.println(qArray.get(2).getQuestion());
-
-        if (scan.nextLine().equals(qArray.get(2).getCorrectAnswer())){
-            points += 1;
-            System.out.println("That is correct");
-            System.out.println("Current points " + points);
-        }else {
-            System.out.println("That is wrong");
-            System.out.println("Current points " + points);
-        }
-
-        System.out.println("Here is the question");
-        System.out.println(qArray.get(3).getQuestion());
-
-        if (scan.nextLine().equals(qArray.get(3).getCorrectAnswer())){
-            points += 1;
-            System.out.println("That is correct");
-            System.out.println("Current points " + points);
-        }else {
-            System.out.println("That is wrong");
-            System.out.println("Current points " + points);
-        }
-    * */
 }
 
 

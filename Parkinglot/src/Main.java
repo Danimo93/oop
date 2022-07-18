@@ -10,7 +10,7 @@ public class Main{
 
         //Price pc = new Price ();
 
-        park.manu();
+        park.menu();
 
 
     }

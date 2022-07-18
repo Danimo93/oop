@@ -1,10 +1,12 @@
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class Parkinglot {
-    public void menu() throws SQLException{
+
+    public void menu() throws SQLException {
         System.out.println("--------------------------------------------------");
         System.out.println("        Welcome to the Parking Lot");
         System.out.println("--------------------------------------------------\n");
@@ -12,12 +14,12 @@ public class Parkinglot {
         boolean check = false;
         Scanner scan = new Scanner(System.in);
 
-        while (!check){
+        while (!check) {
 
             String input = scan.next();
 
-            switch (input){
-                // register a new Cars
+            switch (input) {
+                // register a new Owner
                 case "0":
                     newUser();
                     menuOptions();
@@ -40,6 +42,7 @@ public class Parkinglot {
 
 
                 case "3":
+                    listOfCars();
                     System.out.println("----------------------");
                     menuOptions();
                     break;
@@ -62,15 +65,18 @@ public class Parkinglot {
             }
 
         }
+    }
 
         public void menuOptions(){
-            List<String> menuOptions = new ArrayList<"Register Owner", " ", "", "", "">();
+            List<String> menuOptions = new Arrays.asList<"Register Owner", "Show Your own Car", "See if there is any available Pparking place", "List of all Owner, Cars Models and how long the Owner parked for ", "Exit the game", >();
             int i = 0;
             for(String x : menuOptions) {
                 System.out.println(i + ". " + x);
                 i = i + 1;
             }
         }
-    }
+
+
 }
+
 
