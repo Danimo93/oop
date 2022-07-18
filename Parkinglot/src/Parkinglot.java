@@ -35,7 +35,7 @@ public class Parkinglot {
                 // show available pakring pace
                 case "2":
                     // have to edit
-                    showAvailablePaking();
+                    showAvailableParking();
                     System.out.println("----------------------");
                     menuOptions();
                     break;
@@ -68,13 +68,23 @@ public class Parkinglot {
     }
 
         public void menuOptions(){
-            List<String> menuOptions = new Arrays.asList<"Register Owner", "Show Your own Car", "See if there is any available Pparking place", "List of all Owner, Cars Models and how long the Owner parked for ", "Exit the game", >();
+            List<String> menuOptions = Arrays.asList(
+                    "Register Owner",
+                    "Show Your own Car",
+                    "See if there is any available Pparking place",
+                    "List of all Owner",
+                    "Cars Models and how long the Owner parked for ",
+                    "Exit the game");
             int i = 0;
             for(String x : menuOptions) {
                 System.out.println(i + ". " + x);
                 i = i + 1;
             }
         }
+        public void newUser(){}
+        public void showForOneOwner(){}
+        public void showAvailableParking(){}
+        public void listOfCars(){}
 
 
 }

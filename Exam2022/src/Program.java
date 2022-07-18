@@ -62,8 +62,13 @@ public class Program {
 
     //It is easier to have the Options that the user can select be in its own method, this way we can just call the method when we need it, it also looks fancy
     public void menuOptions(){
-        List<String> menuOptions = Arrays.asList("Play the game", "Show the score card of one play", "Show the best scores for History Quiz",
-                "Show the best scores for Boxing Quiz","List all users and there scores and topics", "Exit the game");
+        List<String> menuOptions = Arrays.asList(
+                "Play the game",
+                "Show the score card of one play",
+                "Show the best scores for History Quiz",
+                "Show the best scores for Boxing Quiz",
+                "List all users and there scores and topics",
+                "Exit the game");
         int i = 0;
         for (String x : menuOptions) {
             System.out.println(i + ". " + x);
