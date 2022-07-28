@@ -40,4 +40,3 @@ create table binaryQuiz
 create unique index binaryQuiz_id_uindex
     on binaryQuiz (id);
 
-

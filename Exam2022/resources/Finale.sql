@@ -3,10 +3,12 @@ USE quizDb;
 
 create table binaryquiz
 (
-    id int auto_increment primary key,
+    id            int auto_increment
+        primary key,
     question      varchar(90) null,
     correctAnswer varchar(45) null,
-    constraint binaryQuiz_id_uindex unique (id)
+    constraint binaryQuiz_id_uindex
+        unique (id)
 );
 
 create table multichoicequiz
