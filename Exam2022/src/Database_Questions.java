@@ -19,7 +19,7 @@ public class Database_Questions {
     public Connection conDb(){
         Connection con = null; // I don't know why, but if I don't do this, it won't work, strange.
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/quizdb?useSSL=false", "root", "Your Password");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/quizdb?useSSL=false", "root", "DAN1945mor");
         }
         catch (SQLException ex) {
             System.out.println("Oh no! Something went wrong when connecting to the database");

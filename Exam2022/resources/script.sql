@@ -10,6 +10,7 @@ create table score
     constraint score_pk
         primary key (id)
 );
+#need to ask preben about line 10, 15, 16
 
 create unique index score_user_uindex
     on score (user);
@@ -24,6 +25,9 @@ create table multichoiceQuiz
     answerC       varchar(45) null,
     answerD       varchar(45) null,
     correctAnswer varchar(45) null,
+
+    #need to check this section line
+
     constraint multichoiceQuiz_pk
         primary key (id)
 );

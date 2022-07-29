@@ -15,8 +15,8 @@ public class Main {
 
 
         //Run these two fill the database with Questions
-        //dq.historyQuestions();
-        //dq.boxingQuestions();
+        dq.historyQuestions();
+        dq.boxingQuestions();
 
 
         //Under here are many of the methods that I call upon to test them before I add them to the 'main' program

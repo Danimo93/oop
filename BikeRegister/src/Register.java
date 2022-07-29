@@ -72,7 +72,7 @@ public class Register {
     public void newBike() throws SQLException{
         System.out.println("Please enter your name");
 
-        Database d = new Database();
+        Database data = new Database();
 
         Scanner scan = new Scanner(System.in);
 
@@ -92,7 +92,7 @@ public class Register {
 
         if (option == 1) {
             Bikes b = new Bikes(name, "", "", 0 , 0);
-            d.newDbBike(b);
+            data.newDbBike(b);
         }
 
 

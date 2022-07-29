@@ -1,8 +1,9 @@
 import java.sql.*;
 import java.util.ArrayList;
-
+/*
 public class Database_Registering {
-    public Database_Questions(){
+
+    public Database_Registering(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         }
@@ -15,7 +16,7 @@ public class Database_Registering {
     public Connection conDb(){
         Connection con = null; // I don't know why, but if I don't do this, it won't work, strange.
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/quizdb?useSSL=false", "root", "Your Password");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/quizdb?useSSL=false", "root", "DAN1945mor");
         }
         catch (SQLException ex) {
             System.out.println("Oh no! Something went wrong when connecting to the database");
@@ -179,4 +180,7 @@ public class Database_Registering {
 
         return m;
     }
+
+
 }
+*/

@@ -36,7 +36,7 @@ public class Database {
              * need to make sql table
              */
 
-            String addBike = "INSERT INTO Bikes() VALUES (?,?,?,?,?)";
+            String addBike = "INSERT INTO RoadBike(NAME, BRANDNAME, COMPONENT, WEIGHT, PRICE) VALUES (?,?,?,?,?)";
 
             PreparedStatement state = con.prepareStatement(addBike);
             state.setString(1, b.getName());
@@ -53,5 +53,9 @@ public class Database {
         }
     }
 
+
     public void getAllRegisterCars(){}
+
+
+
 }
