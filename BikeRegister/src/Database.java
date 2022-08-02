@@ -54,7 +54,7 @@ public class Database {
     }
 
 
-    public void getAllRegisterCars(){}
+    public void getAllRegisterBikes(){}
 
 
 

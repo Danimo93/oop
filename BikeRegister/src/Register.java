@@ -41,7 +41,7 @@ public class Register {
 
                 case "3":
                     Database d = new Database();
-                    d.getAllRegisterCars();
+                    d.getAllRegisterBikes();
                     menuOptions();
                     break;
 
