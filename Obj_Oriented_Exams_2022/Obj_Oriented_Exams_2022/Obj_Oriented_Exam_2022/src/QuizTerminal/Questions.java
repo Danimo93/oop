@@ -18,7 +18,7 @@ public abstract class Questions extends User{
                 "root", "DAN1945mor");
 
         Statement stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM multichoicequiz");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM quizdb.multichoicequiz");
 
         Scanner userInput = new Scanner(System.in);
 
@@ -58,7 +58,7 @@ public abstract class Questions extends User{
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/quizdb",
                 "root", "DAN1945mor");
         Statement stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM binaryquiz");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM quizdb.binaryquiz");
 
         Scanner userInput = new Scanner(System.in);
 
