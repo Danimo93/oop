@@ -58,7 +58,7 @@ public class Register {
     public void menuOptions(){
         List<String> menuOptions = Arrays.asList(
                 "Register your new Bike",
-                "See if your Bike is registered",
+                "See the one who has registered that bike",
                 "Show the top 3 registered Bikes",
                 "List all Bikes registered",
                 "Exit");
@@ -103,7 +103,7 @@ public class Register {
     }
 
     public void seeOneRegisterBike(){
-        System.out.println("What is the username for the player");
+        System.out.println("What is the brand name of the bike you want to see?");
 
         Scanner scan = new Scanner(System.in);
 

@@ -52,37 +52,47 @@ public class Database {
     }
 
 
-    // Who Has registered a  this bike brand?
-    public void RegisterForOneDb(String brandname, String Name) {
+    // Who Has registered a this bike brand?
+
+    /**
+     * This function works.
+     * The Search engine works with finding the name.
+     * but it only returns the first result not brand name.
+     * as the end game is to find the brand name.
+     * and who has registered it.
+     *
+     */
+
+    public void RegisterForOneDb(String brandname) {
         try {
 
             Connection con = conDb();
 
-            ArrayList<Integer> points = new ArrayList<>();
+            ArrayList<String> name = new ArrayList<>();
 
-            String findName = "SELECT BrandName, Name from RegisterBikes where Name = ?";
+            String findName = "SELECT Name from RegisterBikes where BrandName = ?";
 
             PreparedStatement state = con.prepareStatement(findName);
-            state.setString(1, brandname);
+            state.setString(1, String.valueOf(brandname));
             ResultSet resSet = state.executeQuery();
 
             while (resSet.next()){
-                points.add(BikeMap(resSet));
+                name.add(BikeMap(resSet));
             }
-            System.out.println("Person who registered " + brandname + " Registered by: " + Name +"\n");
+            System.out.println("\nPerson who registered " + brandname + " bikes is registered by:\n" + name +"\n");
         }
         catch (SQLException ex){
-            System.out.println("Something is wrong, can't get this form the database");
+            System.out.println("Can't get this name from the database");
             ex.printStackTrace();
         }
     }
 
-    public int BikeMap(ResultSet r) throws SQLException {
-        int points;
+    public String BikeMap(ResultSet r) throws SQLException {
+        String name;
 
-        points = (r.getInt("score"));
+        name = (r.getString("name"));
 
-        return points;
+        return name;
     }
 
 
