@@ -3,6 +3,7 @@ public class BikeRegistering extends BikeReg{
     private String ComponentA;
     private String ComponentB;
     private String ComponentC;
+    private String Answer;
 
     public BikeRegistering(){
     }
@@ -12,6 +13,7 @@ public class BikeRegistering extends BikeReg{
         this.ComponentA = ComponentA;
         this.ComponentB = ComponentB;
         this.ComponentC = ComponentC;
+        this.Answer = Answer;
     }
 
     public String getComponent() {
@@ -44,6 +46,14 @@ public class BikeRegistering extends BikeReg{
 
     public void setComponentC(String componentC) {
         ComponentC = componentC;
+    }
+
+    public String getAnswer() {
+        return Answer;
+    }
+
+    public void setAnswer(String answer) {
+        Answer = answer;
     }
 
     @Override

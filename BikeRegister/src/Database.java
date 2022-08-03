@@ -119,6 +119,17 @@ public class Database {
         }
     }
 
+    public void updatePoints(int points, Bikes b) throws SQLException {
+        Connection con = conDb();
+
+        String update = "UPDATE RegisterBikes SET Points = ? WHERE Name = ?";
+
+        PreparedStatement state = con.prepareStatement(update);
+        state.setInt(1, points);
+        state.setString(2, b.getName());
+        state.executeUpdate();
+    }
+
     public void getAllRegisteredBikes(){
 
             try {

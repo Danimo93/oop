@@ -1,8 +1,5 @@
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 
 /**
@@ -122,10 +119,18 @@ public class RegisterProgram {
         data.lightestBikes();
     }
 
+
+    /**
+     * Need Change this to function  as it is registered points
+     * need the user to choose what kind of component he wants to register and
+     * it will be registered in the database Component = "Component"
+     */
+
+
     public void inputBikes(Bikes b) throws SQLException {
         Database_Registering dataRg = new Database_Registering();
         Scanner scan = new Scanner(System.in);
-        ArrayList<BikeRegistering> bikesArraysList = new ArrayList<>();
+        ArrayList<BikeRegistering> bikesArraysList = dataRg.RG();
         int point = 0;
         int i = 0;
 
@@ -136,13 +141,19 @@ public class RegisterProgram {
                     bikesArraysList.get(i).getComponentA() + ". " + " " +
                     bikesArraysList.get(i).getComponentB() + ". " + " " +
                     bikesArraysList.get(i).getComponentC() + ". ");
-            if (x.getBrandName().equals(b.getBrandName())) {
-                point = i;
+            if (scan.nextLine().toLowerCase().equals(bikesArraysList.get(i).getAnswer())) {
+                System.out.println(" Thank you for registering");
+                point += i;
+                System.out.println("Your point is " + point);
+            } else {
+                System.out.println("Sorry, you are wrong");
+                System.out.println("your point " + point);
             }
-            i = i + 1;
+            i += 1;
         }
+        System.out.println(" Round over \n " + " You recieved  a total of " + point + " points\n");
         Database data = new Database();
-        data.getAllRegisteredBikes();
+        data.updatePoints(point, b);
     }
 
 
