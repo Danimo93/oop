@@ -40,8 +40,8 @@ public class Database {
             state.setString(1, b.getName());
             state.setString(2, b.getBrandName());
             state.setString(3, b.getComponent());
-            state.setInt(4, b.getWeight());
-            state.setInt(5, b.getPrice());
+            state.setDouble(4, b.getWeight());
+            state.setDouble(5, b.getPrice());
 
             state.executeUpdate();
         }
@@ -77,7 +77,7 @@ public class Database {
             ResultSet resSet = state.executeQuery();
 
             while (resSet.next()){
-                name.add(BikeMap(resSet));
+                name.add(findBikeDb(resSet));
             }
             System.out.println("\nPerson who registered " + brandname + " bikes is registered by:\n" + name +"\n");
         }
@@ -87,18 +87,65 @@ public class Database {
         }
     }
 
-    public String BikeMap(ResultSet r) throws SQLException {
+    public String findBikeDb(ResultSet r) throws SQLException {
         String name;
 
-        name = (r.getString("name"));
+        name = (r.getString("Name"));
 
         return name;
     }
 
+    public void lightestBikes(){
+        try {
 
+            Connection con = conDb();
 
-    public void getAllRegisterBikes(){}
+            String top3 = "SELECT * FROM RegisterBikes order by Weight asc limit 3";
 
+            Statement state = con.createStatement();
 
+            ResultSet rs = state.executeQuery(top3);
 
+            while (rs.next()){
+                System.out.println("\nUser: "
+                        + rs.getString("Name") + " has registered "
+                        + rs.getString("BrandName") + " bike with a weight of "
+                        + rs.getDouble("Weight" ) + "kg");
+            }
+        }
+        catch (SQLException ex){
+            System.out.println("Hmmmm... something is wrong with this method");
+            ex.printStackTrace();
+        }
+    }
+
+    public void getAllRegisteredBikes(){
+
+            try {
+
+                Connection con = conDb();
+
+                String select = "SELECT * FROM RegisterBikes ORDER BY BrandName DESC";
+
+                Statement state = con.createStatement();
+
+                ResultSet rs = state.executeQuery(select);
+
+                while (rs.next()){
+                    System.out.println("\nUser: "
+                            + rs.getString("Name") + " has registered "
+                            + rs.getString("BrandName") + " with a component of "
+                            + rs.getString("Component") + " the price for this bike is "
+                            + rs.getDouble("Price") + "kr" + "\n");
+                }
+            }
+            catch (SQLException ex){
+                System.out.println("Something went wrong when trying to relative all the scores from the database");
+                System.out.println(ex);
+            }
+        }
 }
+
+
+
+

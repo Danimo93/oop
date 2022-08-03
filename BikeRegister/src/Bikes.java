@@ -1,19 +1,18 @@
-public class Bikes {
+public class Bikes extends Register{
 
     //I named the class User and not 'UserScore' because it made more sense to me to name it this.
 
     private String Name;
     private String BrandName;
     private String Component;
-    private int Weight;
-    private int Price;
+    private double Weight;
+    private double Price;
 
     public Bikes(){
-
     }
 
 
-    public Bikes(String Name, String BrandName, String Component, int Weight, int Price) {
+    public Bikes(String Name, String BrandName, String Component, double Weight, double Price) {
         this.Name = Name;
         this.BrandName = BrandName;
         this.Component = Component;
@@ -45,7 +44,7 @@ public class Bikes {
         Component = component;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return Weight;
     }
 
@@ -53,7 +52,7 @@ public class Bikes {
         Weight = weight;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return Price;
     }
 

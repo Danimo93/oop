@@ -1,4 +1,5 @@
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -10,10 +11,10 @@ import java.util.Scanner;
 
 
 
-public class Register {
+public class RegisterProgram {
 
     public void menu() throws SQLException {
-        System.out.println("\nWelcome to register Bikes\nWhat do you want do\n");
+        System.out.println("\nWelcome to Cycling Shop\nWhat do you want do?\n");
         menuOptions();
         boolean check = false;
         Scanner scan = new Scanner(System.in);
@@ -34,19 +35,19 @@ public class Register {
                     break;
 
                 case "2":
-                    top3RegistedBikes(); // Need to have this in random select
+                    top3LightestBikes(); // Need to have this in random select
                     System.out.println("--------------------");
                     menuOptions();
                     break;
 
                 case "3":
                     Database d = new Database();
-                    d.getAllRegisterBikes();
+                    d.getAllRegisteredBikes();
                     menuOptions();
                     break;
 
                 case "4":
-                    System.out.println("Have a good");
+                    System.out.println("Have a good day");
                     System.exit(1);
 
                 default:
@@ -59,7 +60,7 @@ public class Register {
         List<String> menuOptions = Arrays.asList(
                 "Register your new Bike",
                 "See the one who has registered that bike",
-                "Show the top 3 registered Bikes",
+                "Show the top 3 lightest bikes",
                 "List all Bikes registered",
                 "Exit");
         int i = 0;
@@ -81,7 +82,7 @@ public class Register {
         String name = input;
 
         // Hmm not sure what the im going to do with this...
-        System.out.println("For Registering Bikes press 1:\nGoing bake to the menu press 2:");
+        System.out.println("For Registering Bikes press 1:\nGoing back to the menu press 2:");
 
         input = scan.nextLine();
         //String kind = input;
@@ -94,6 +95,7 @@ public class Register {
         if (option == 1) {
             Bikes b = new Bikes(name, "", "", 0 , 0);
             data.newDbBike(b);
+            inputBikes(b);
         }else if (option == 2) {
             menu();
         }
@@ -109,13 +111,39 @@ public class Register {
 
         String name = scan.nextLine();
 
-        Database d = new Database();
+        Database data = new Database();
 
-        d.RegisterForOneDb(name);
+        data.RegisterForOneDb(name);
 
     }
 
-    public void top3RegistedBikes(){}
+    public void top3LightestBikes(){
+        Database data = new Database();
+        data.lightestBikes();
+    }
+
+    public void inputBikes(Bikes b) throws SQLException {
+        Database_Registering dataRg = new Database_Registering();
+        Scanner scan = new Scanner(System.in);
+        ArrayList<BikeRegistering> bikesArraysList = new ArrayList<>();
+        int point = 0;
+        int i = 0;
+
+        for (BikeRegistering ignored : bikesArraysList) {
+            System.out.println("Please enter what you need ");
+            System.out.println(bikesArraysList.get(i).getComponent());
+            System.out.println(
+                    bikesArraysList.get(i).getComponentA() + ". " + " " +
+                    bikesArraysList.get(i).getComponentB() + ". " + " " +
+                    bikesArraysList.get(i).getComponentC() + ". ");
+            if (x.getBrandName().equals(b.getBrandName())) {
+                point = i;
+            }
+            i = i + 1;
+        }
+        Database data = new Database();
+        data.getAllRegisteredBikes();
+    }
 
 
 }

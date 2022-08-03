@@ -1,4 +1,3 @@
-/*
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -34,7 +33,7 @@ public class Database_Registering {
             Connection con = conDb();
 
             //Question 1
-            String question1 = "INSERT INTO multichoicequiz(question, answerA, answerB, answerC, answerD, correctAnswer) VALUES (?,?,?,?,?,?)";
+            String question1 = "INSERT INTO RegisterBikes(BrandName) VALUES (?)";
             PreparedStatement stat1 = con.prepareStatement(question1);
             stat1.setString(1, "In 793 the Vikings raided Lindisfarne, but where is that?");
             stat1.setString(2, "A - Scotland");
@@ -89,99 +88,36 @@ public class Database_Registering {
 
     //I guessed that the binary Questions should have a yes or no answer, I assume, that's how I interpret it, on or off.
     //If I did misinterpret, I hope I didn't misinterpret too badly.
-    public void boxingQuestions() {
-        try {
-
-            Connection con = conDb();
-
-            //Question 1
-            String question1 = "INSERT INTO binaryquiz(question, correctAnswer) VALUES (?,?)";
-            PreparedStatement stat1 = con.prepareStatement(question1);
-            stat1.setString(1, "Has Tyson Fury has won an Olympic medal? y or n");
-            stat1.setString(2, "n");
-
-            //Question 2
-            String question2 = "INSERT INTO binaryquiz(question, correctAnswer) VALUES (?,?)";
-            PreparedStatement stat2 = con.prepareStatement(question2);
-            stat2.setString(1, "Is it true that Mike Tyson has 44 pro wins by KO? y or n");
-            stat2.setString(2, "y");
-
-            //Question 3
-            String question3 = "INSERT INTO binaryquiz(question, correctAnswer) VALUES (?,?)";
-            PreparedStatement stat3 = con.prepareStatement(question3);
-            stat3.setString(1, "Is a flyweight heavier then feather weight? y or n");
-            stat3.setString(2, "n");
-
-            //Question 4
-            String question4 = "INSERT INTO binaryquiz(question, correctAnswer) VALUES (?,?)";
-            PreparedStatement stat4 = con.prepareStatement(question4);
-            stat4.setString(1, "Was George Foreman 45 years old when he became heavyweight champion y or n");
-            stat4.setString(2, "y");
-
-            stat1.executeUpdate();
-            stat2.executeUpdate();
-            stat3.executeUpdate();
-            stat4.executeUpdate();
-        }
-        catch (SQLException ex){
-            System.out.println("Oh now, can't add these to the database");
-            ex.printStackTrace();
-        }
-    }
 
     //The two methods bellow have the job of making an array filled with BinaryQuiz objects that can be used with other methods
-    public ArrayList<BinaryQuiz> BQ() throws SQLException {
-        ArrayList<BinaryQuiz> binQuiz = new ArrayList<>();
-        Connection con = conDb();
-        Statement state = con.createStatement();
-        String getBinQuestions = "SELECT * FROM binaryquiz";
-
-        ResultSet resSet = state.executeQuery(getBinQuestions);
-
-        while (resSet.next()){
-            binQuiz.add(boxingMap(resSet));
-        }
-        return  binQuiz;
-    }
-
-    public BinaryQuiz boxingMap(ResultSet r) throws SQLException {
-        BinaryQuiz b = new BinaryQuiz();
-
-        b.setQuestion(r.getString("question"));
-        b.setCorrectAnswer(r.getString("correctAnswer"));
-
-        return b;
-    }
 
 
     //The two methods bellow have the job of making an array filled with MultichoiceQuiz objects that can be used with other methods
-    public ArrayList<MultichoiceQuiz> MQ() throws SQLException{
-        ArrayList<MultichoiceQuiz> multiArray = new ArrayList<>();
+    public ArrayList<BikeRegistering> RG() throws SQLException{
+        ArrayList<BikeRegistering> RegArray = new ArrayList<>();
         Connection con = conDb();
         Statement state = con.createStatement();
-        String getMulitQuestions = "SELECT * FROM multichoicequiz";
+        String getBikeRegistering = "SELECT * FROM BikeRegistering";
 
-        ResultSet resSet = state.executeQuery(getMulitQuestions);
+        ResultSet resSet = state.executeQuery(getBikeRegistering);
 
         while (resSet.next()){
-            multiArray.add(historieMap(resSet));
+            RegArray.add(inputBikes(resSet));
         }
-        return multiArray;
+        return RegArray;
     }
 
-    public MultichoiceQuiz historieMap(ResultSet r) throws SQLException{
-        MultichoiceQuiz m = new MultichoiceQuiz();
+    public BikeRegistering inputBikes(ResultSet r) throws SQLException{
+        BikeRegistering reg = new BikeRegistering();
 
-        m.setQuestion(r.getString("question"));
-        m.setAnswerA(r.getString("answerA"));
-        m.setAnswerB(r.getString("answerB"));
-        m.setAnswerC(r.getString("answerC"));
-        m.setAnswerD(r.getString("answerD"));
-        m.setCorrectAnswer(r.getString("correctAnswer"));
+        reg.setComponentA(r.getString("question"));
+        reg.setComponentB(r.getString("answerA"));
+        reg.setComponentC(r.getString("answerB"));
+        //reg.setCorrectAnswer(r.getString("correctAnswer"));
 
-        return m;
+        return reg;
     }
 
 
 }
-*/
+

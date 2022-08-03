@@ -211,11 +211,14 @@ public class Program {
         int points = 0;
         int i = 0;
 
-        for (MultichoiceQuiz ignored: historyArray) {
+        for (MultichoiceQuiz ignored : historyArray) {
             System.out.println("Here is the question");
             System.out.println(historyArray.get(i).getQuestion());
-            System.out.println(historyArray.get(i).getAnswerA()  + ". " + " " + historyArray.get(i).getAnswerB()  + ". " + " "
-                    + historyArray.get(i).getAnswerC()  + ". " + " " + historyArray.get(i).getAnswerD() + ". ");
+            System.out.println(
+                                    historyArray.get(i).getAnswerA()  + ". " + " " +
+                                    historyArray.get(i).getAnswerB()  + ". " + " " +
+                                    historyArray.get(i).getAnswerC()  + ". " + " " +
+                                            historyArray.get(i).getAnswerD() + ". ");
             if (scan.nextLine().toLowerCase().equals(historyArray.get(i).getCorrectAnswer())){
                 System.out.println("That is correct");
                 points += 1;
