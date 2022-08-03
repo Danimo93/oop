@@ -1,7 +1,5 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 
 public class Database {
 
@@ -36,7 +34,7 @@ public class Database {
              * need to make sql table
              */
 
-            String addBike = "INSERT INTO RoadBike(NAME, BRANDNAME, COMPONENT, WEIGHT, PRICE) VALUES (?,?,?,?,?)";
+            String addBike = "INSERT INTO RegisterBikes(NAME, BRANDNAME, COMPONENT, WEIGHT, PRICE) VALUES (?,?,?,?,?)";
 
             PreparedStatement state = con.prepareStatement(addBike);
             state.setString(1, b.getName());
@@ -52,6 +50,41 @@ public class Database {
             ex.printStackTrace();
         }
     }
+
+
+    // Who Has registered a  this bike brand?
+    public void RegisterForOneDb(String brandname, String Name) {
+        try {
+
+            Connection con = conDb();
+
+            ArrayList<Integer> points = new ArrayList<>();
+
+            String findName = "SELECT BrandName, Name from RegisterBikes where Name = ?";
+
+            PreparedStatement state = con.prepareStatement(findName);
+            state.setString(1, brandname);
+            ResultSet resSet = state.executeQuery();
+
+            while (resSet.next()){
+                points.add(BikeMap(resSet));
+            }
+            System.out.println("Person who registered " + brandname + " Registered by: " + Name +"\n");
+        }
+        catch (SQLException ex){
+            System.out.println("Something is wrong, can't get this form the database");
+            ex.printStackTrace();
+        }
+    }
+
+    public int BikeMap(ResultSet r) throws SQLException {
+        int points;
+
+        points = (r.getInt("score"));
+
+        return points;
+    }
+
 
 
     public void getAllRegisterBikes(){}

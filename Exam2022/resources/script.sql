@@ -1,4 +1,4 @@
-CREATE DATABASE quizDb;
+##CREATE DATABASE quizDb;
 USE quizDb;
 
 create table score

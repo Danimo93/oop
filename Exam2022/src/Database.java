@@ -199,7 +199,7 @@ public class Database {
         ArrayList<User> users = listAllUser();
 
         for (User x: users) {
-            System.out.println("Usernam:  " + x.getName());
+            System.out.println("Username:  " + x.getName());
             System.out.println("------------------\n");
         }
     }

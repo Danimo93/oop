@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Register {
 
     public void menu() throws SQLException {
-        System.out.println("Register Cars \n What do you want do");
+        System.out.println("\nWelcome to register Bikes\nWhat do you want do\n");
         menuOptions();
         boolean check = false;
         Scanner scan = new Scanner(System.in);
@@ -81,8 +81,9 @@ public class Register {
         String name = input;
 
         // Hmm not sure what the im going to do with this...
-        System.out.println("For Registering Road Bikes press 1:\nFor Registering Mountain Bike press 2:");
+        System.out.println("For Registering Bikes press 1:\nGoing bake to the menu press 2:");
 
+        input = scan.nextLine();
         //String kind = input;
         //String component = input;
         //int weight = Integer.parseInt(input);
@@ -93,14 +94,24 @@ public class Register {
         if (option == 1) {
             Bikes b = new Bikes(name, "", "", 0 , 0);
             data.newDbBike(b);
+        }else if (option == 2) {
+            menu();
         }
-
 
         // registered for Mountain bike and RoadBike
 
     }
 
     public void seeOneRegisterBike(){
+        System.out.println("What is the username for the player");
+
+        Scanner scan = new Scanner(System.in);
+
+        String name = scan.nextLine();
+
+        Database d = new Database();
+
+        d.RegisterForOneDb(name);
 
     }
 
